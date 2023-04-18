@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.register-login{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.register-h2{
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.register-div{
+    width: 100%;
+}
+
+.register-p{
+    width: 90%;
+    margin-left: 10%;
+}
+
+.register-form{
+    width: 100%;
+}
+
+.register-wrap{
+    width: 90%;
+    margin-left: 10%;
+}
+
+.register-label{
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+.register-input{
+    width: 70%;
+    border-radius: 8px;
+    height: 40px;
+}
+
+.register-button{
+    width: 70%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: teal;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.register-button:hover{
+    background-color: rgb(1, 26, 26);
+}

@@ -1,0 +1,27 @@
+<%- include('../partials/head')%>
+
+    <title>All Clothes | Aphonistar</title>
+
+</head>
+<body>
+<%- include('../partials/nav')%>
+
+
+<% for(let cloth of clothes) {%>
+    <div class="allCloth-name">
+        <a class="allCloth-name" href="/clothing/<%=cloth._id%>"><%=cloth.ownerName.toUpperCase()%></a>
+    </div>
+    <% cloth.clothImages.forEach(image => {%>
+        <img crossorigin="anonymous" class="show" alt="A..Alt" src="<%=image.url%>">  
+    <%})%>
+
+ <% } %>
+
+
+<a href="/clothing" class="allCloth-anchor"><button class="button">Add Customer</button></a>
+
+
+  <%- include('../partials/footer')%>      
+</body>
+
+</html>

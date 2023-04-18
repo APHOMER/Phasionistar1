@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.measure-section{
+    width: 95%;
+    margin-left: 5%;
+    padding-top: 1px;
+}
+
+.measure-header{
+    margin-top: 60px;
+}
+
+.wrapper{
+    padding-top: 1px;
+}
+
+.covers{
+    margin-top: 30px;
+}
+
+.covers:last-child{
+    margin-bottom: 20px;
+}
+

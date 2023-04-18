@@ -1,0 +1,133 @@
+<%- include('../partials/head')%>
+
+
+    <title>Edit Cloth | phasioniStar</title>
+</head>
+<style>
+    
+</style>
+<body>
+<%- include('../partials/nav')%>
+    <section class="edit-form">
+        <h1>Welcome to <span class="text-primary">Phasioni</span>Star</h1>
+        <h2>Owners Profile</h2>
+        <div class="edit-container">
+            <h1 class="edit-heading"><span class="text-primary">Phasioni</span>Star</h1>
+            <p>Register your Customer below</p>
+            <form class="form-cover" action="/clothing/<%=cloth._id%>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+                <div id="cloth" class="left">
+                    <div class="form-group">
+                        <label for="customer-name">Owner's Name</label>
+                        <input type="text" name="ownerName" id="ownerName" value="<%= cloth.ownerName %>" autocomplete="on" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phasionName">Owner's Contact</label>
+                        <input type="number" name="contact" id="contact" value="<%= cloth.contact %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="price" name="price" id="price" value="<%= cloth.price %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="deposit">Amount Deposited</label>
+                        <input type="deposit" name="deposit" id="deposit" value="<%= cloth.deposit %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                    <label for="deliveryDate">delivery Date</label>
+                    <input type="date" name="deliveryDate" id="deliveryDate" value="<%= cloth.deliveryDate %>" autocomplete="off">
+                </div>
+                </div>
+                
+
+                <div id="info" class="measure">
+                    <div ></div>
+                    <h3>Client's Measurements</h3>
+                    <h5>Select measurements: centimeter or inches</h5>
+                    <div>
+                        <select name="measurements" id="measurements">
+                            <option value="inches">Inches</option>
+                            <option value="centimeter">Centimeter</option>
+                            <option value="meter">Meter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="clothImage">Cloth Image</label>
+                        <input type="file" name="clothImage" id="clothImage" placeholder="Cloth Image" multiple>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leg">leg</label>
+                        <input type="number" name="leg" id="leg" value="<%= cloth.leg %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">   
+                        <label for="arm">arm</label>
+                        <input type="number" name="arm" id="arm" value="<%= cloth.arm %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="neck">neck</label>
+                        <input type="number" name="neck" id="neck" value="<%= cloth.neck %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="waist">Waistline</label>
+                        <input type="number" name="waist" id="waist" value="<%= cloth.waist %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="shoulder">shoulder</label>
+                        <input type="number" name="shoulder" id="shoulder" value="<%= cloth.shoulder %>" autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="chest">Chest Circumference</label>
+                        <input type="number" name="chest" id="chest" value="<%= cloth.chest %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="bicep">Bicep</label>
+                        <input type="number" name="bicep" id="bicep" value="<%= cloth.bicep %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="wrist">Wrist</label>
+                        <input type="number" name="wrist" id="wrist" value="<%= cloth.wrist %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="back">Back Length</label>
+                        <input type="number" name="back" id="back" value="<%= cloth.back %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="stomach">stomach</label>
+                        <input type="number" name="stomach" id="stomach" value="<%= cloth.stomach %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="hip">hip</label>
+                        <input type="number" name="hip" id="hip" value="<%= cloth.hip %>" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="thigh">Thigh</label>
+                        <input type="number" name="thigh" id="thigh" value="<%= cloth.thigh %>" autocomplete="off">
+                    </div>
+
+
+                </div>
+
+                <div class="mb-3">
+                    <% cloth.clothImages.forEach(function(img, i) { %>
+                        <!-- <img src="<%=img.thumb %>" class="img-thumbnail" alt=""> -->
+                        <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="...">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="clothImage-<%=i%>" name="deleteClothImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="clothImage-<%=i%>">Delete?</label>
+                    <% }) %>
+                </div>
+
+                <div>
+                    <button type="register" name="updateBtn" class="btn">Update Cloth</button>
+                </div>
+                <div>
+                    <a class="btn" href="/clothings">All Clothes</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <%- include('../partials/footer')%>
+</body>
+</html>

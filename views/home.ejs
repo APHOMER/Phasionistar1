@@ -1,0 +1,51 @@
+<%- include('partials/head')%>
+
+<title>Home | Phasionistar</title>
+
+</head>
+<body>
+  <%- include('partials/nav')%>
+  
+  <div class="home-page">
+    <div class="home-wrapper">
+      <h1 class="home-heading">{USER} req.user.username WELCOME TO PHASIONISTAR</h1>
+      <ul class="home-ul">
+        <div>
+            <li class="home-li">start date: 14-10-2022::::::7:44:PM::::::</li>
+            
+        </div>
+      </ul>
+      <h2 class="home-h2">This is your FIRST home of fashion</h2>
+      <!-- how to measure -->
+      <a class="measure" href="/howToMeasure"><button>How to take Measurements</button></a>
+      <ul class="home-ul">
+        <div class="home-image-container">
+            <img src="../img/ankara.jpg" alt="ankara" class="home-image">
+            <li class="home-list-item">Ankara</li>
+            <img src="../img/senator-styles.webp" alt="Senator" class="home-image">
+            <li class="home-list-item">Senator</li>
+            <img src="../img/lace.jpg" alt="Lace" class="home-image">
+            <li class="home-list-item">Lace</li>
+            <img src="../img/george.webp" alt="Judge" class="home-image">
+            <li class="home-list-item">George</li>
+            <img src="../img/atiku.jpg" alt="atiku" class="home-image">
+            <li class="home-list-item" alt="atiku">Atiku</li>
+            <img src="../img/silk.jpg" alt="silk" class="home-image">
+            <li class="home-list-item">Silk</li>
+            <img src="../img/others.jpg" alt="Others" class="home-image">
+            <li class="home-list-item">Others</li>
+
+            <!-- <img src="../img/cheers.jpg" alt="ankara" class="home-image">
+            <li class="home-list-item">Ankara</li> -->
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  
+
+
+ <%- include('partials/footer')%>
+</body>
+
+</html>

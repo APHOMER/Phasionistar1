@@ -1,0 +1,161 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+/* utility classes */
+a { 
+    text-decoration: none;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+/* img {
+    height: 100%;
+} */
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #93cb52;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-dark {
+    background: #333;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #7ab436;
+}
+
+.text-primary {
+    color: #93cb52;
+    text-decoration: none;
+}
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    color: #fff;
+}
+
+.bg-primary {
+    background: #93cb52;
+    color: #fff;
+}
+
+
+
+
+/* ............. */
+
+#navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: #333;
+    color: #fff;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+    width: 100%;
+    margin-left: 0%;
+    /* border-bottom: 20px; */
+}
+
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+}
+
+#navbar ul li a:hover{
+    background: #93cb52;
+    border-radius: 5px;
+}
+
+
+/* show page */
+
+#container {
+    text-align: center;
+    display: flex;
+    color: #93cb52 !important;
+    background: #333;
+    
+}
+
+.container #cloth-image {
+    /* border: rgb(6, 202, 26); */
+    /* display: flex; */
+    border-radius: 20;
+    justify-content: flex-start;
+    height: 20%;
+    width: 50%;
+}
+
+.container #cloth-image img{
+    width: 400px;
+    height: 300px;
+}
+
+.container #customer-details {
+    border-left: 20px;
+    /* display: flex; */
+    justify-content: flex-end;
+    /* align-items: flex-end; */
+    /* align-content: flex-end; */
+    height: 100%;
+    width: 400px;
+}
+
+.container #customer-details h1 {
+    align-content: flex-start;
+    /* align-items: flex-start; */
+}
+
+
+
+body {
+    /* background-color: rgb(231, 231, 86); */
+    line-height: 1.4;
+}
+
+.alert-success {
+    color: green;
+}
+
+.alert-danger {
+    color: red;
+}
+
+.img {
+    
+    width: 200px;
+    height: 200px;
+    border: green;
+    border-color: red;
+}
+
+/* .show {
+    width: 400px;
+    height: 300px;
+    border: green;
+} */

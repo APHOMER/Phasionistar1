@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* utility classes */
+a { 
+    text-decoration: none;
+    color: #93cb52;
+}
+
+.star{
+    color: red;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+/* img {
+    height: 100%;
+} */
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #93cb52;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-dark {
+    background: #333;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #7ab436;
+}
+
+.text-primary {
+    color: #93cb52;
+    text-decoration: none;
+}
+
+.bg-light {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    color: #fff;
+}
+
+.bg-primary {
+    background: #93cb52;
+    color: #fff;
+}
+
+#navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #333;
+    color: #fff;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 1rem;
+    border-bottom: 20px;
+}
+
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.75rem;
+}
+
+#navbar ul li a:hover{
+    background: #93cb52;
+    border-radius: 5px;
+}
+
+
+/* show page */
+
+#container {
+    text-align: center;
+    display: flex;
+    color: #93cb52 !important;
+    background: #333;
+    display: flex;
+    
+}
+
+.container #cloth-image {
+    /* border: rgb(6, 202, 26); */
+    border-radius: 20;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.container #customer-details {
+    border-left: 20px;
+    /* display: flex; */
+    justify-content: flex-end;
+    height: 100%;
+}
+
+#show-section .container #cloth-image #customer-details {
+    flex: 1;
+}
+
+
+
+body {
+    background-color: #333;
+    width: 100%;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0;
+}
+
+.alert-success {
+    color: green;
+}
+
+.alert-danger {
+    color: red;
+}
+
+.img {
+    
+    width: 200px;
+    height: 200px;
+    border: green;
+    border-color: red;
+}
+
+/* .show {
+    width: 400px;
+    height: 300px;
+    border: green;
+} */
+
+/* .......... Contact Form : Login and Register Page */
+.contact-form {
+    width: 100%
+}
+
+#contact .contact-form label {
+    display: block;
+}
+
+#contact .contact-form input {
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 2.5px;
+}
+/* #contact .contact-form */
+#contact .contact-form .form-cover {
+    margin-left: 0.5rem;
+}
+
+
+/* new Customer Cloth form */
+
+#contact-form .container {
+    /* display: flex; */
+    color: #333 !important;
+    background: #93cb52;
+    /* display: flex; */
+    
+}
+
+
+#contact-form .container .form-cover, 
+#contact-form .container p{
+    margin-left: 0.5rem;
+}
+
+#contact-form .container .form-cover .form-group label {
+    display: block;
+}
+
+#contact-form .container .form-cover .form-group input{
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 2.5px;
+}
+
+.cloth-img {
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+/* footer */
+
+
+#main-footer {
+    margin-bottom: 0px;
+    text-align: center;
+    width: 100%
+}
+
+
+
+/* HOME PAGE STYLES */
+.home-page{
+    background-color: #93cb52;
+    
+}

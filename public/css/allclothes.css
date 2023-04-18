@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.allCloth-img{
+    width: 100%;
+    padding-top: 100px;
+}
+
+.show{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.allCloth-name{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.allCloth-name:hover{
+    color: teal;
+}
+
+.allCloth-anchor{
+    display: block;
+    width: 20%;
+    margin: 60px 42.5% 20px 42.5%;
+    color: white;
+    border-radius: 5px;
+}
+
+.button{
+    width: 100%;
+    color: white;
+    background-color: teal;
+    padding-top: 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    border-width: 0px;
+}
+.button:hover{
+    background-color: rgb(2, 43, 43);
+}

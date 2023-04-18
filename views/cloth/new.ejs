@@ -1,0 +1,124 @@
+<%- include('../partials/head')%>
+
+    <title>Product | Aphonistar</title>
+
+</head>
+<body>
+    <%- include('../partials/nav')%>
+    
+    <section id="new-form" class="form-section">
+      <h2 class="form-heading">Owners Profile</h2>
+      <div class="new-container">
+        <p class="form-p">Register your Customer below</p>
+        <form action="/clothing" method="POST" class="form-cover" enctype="multipart/form-data">
+            <div id="cloth" class="left">
+                <div class="form-group">
+                    <label for="customer-name" class="form-label">Owner's Name</label>
+                    <input class="form-input" type="text" name="ownerName" id="ownerName" placeholder="Client's Name" autocomplete="on" required>
+                </div>
+                <div class="form-group">
+                    <label for="phasionName" class="form-label">Owner's Contact</label>
+                    <input class="form-input" type="number" name="contact" id="contact" placeholder="Owner's contact" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="form-label">Price</label>
+                    <input class="form-input" type="price" name="price" id="price" placeholder="price">
+                </div>
+                <div class="form-group">
+                    <label for="deposit" class="form-label">Amount Deposited</label>
+                    <input class="form-input" type="deposit" name="deposit" id="deposit" placeholder="Amount Deposited" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                  <label for="deliveryDate" class="form-label">delivery Date</label>
+                  <input class="form-input" type="date" name="deliveryDate" id="deliveryDate" placeholder="Delivery Date" autocomplete="off" required>
+              </div>
+            </div>
+              
+
+            <div id="info" class="right">
+                <h3>Client's Measurements</h3>
+                <div class="measure">
+                    <h5>Select measurements: centimeter or inches</h5>
+                    <select name="measurements" id="measurements">
+                        <option value="inches">Inches</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="meter">Meter</option>
+                    </select>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="styleImage">style Image</label>
+                    <input type="file" name="styleImage" id="styleImage" placeholder="Cloth Style" required>
+                </div> -->
+                <div class="form-group">
+                    <label for="leg" class="form-label">Inside leg</label>
+                    <input class="form-input" type="number" name="leg" id="leg" placeholder="leg" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="neck" class="form-label">neck</label>
+                    <input class="form-input" type="number" name="neck" id="neck" placeholder="Neck Circumference" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="waist" class="form-label">WaistLine</label>
+                    <input class="form-input" type="number" name="waist" id="waist" placeholder="waist" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="shoulder" class="form-label">Shoulder width</label>
+                    <input class="form-input" type="number" name="shoulder" id="shoulder" placeholder="shoulder" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="arm" class="form-label">Arm Length</label>
+                    <input class="form-input" type="number" name="arm" id="arm" placeholder="arm" autocomplete="off">
+                </div>
+<!-- ........................ -->
+                <div class="form-group">
+                    <label for="chest" class="form-label">Chest Circumference</label>
+                    <input class="form-input" type="number" name="chest" id="chest" placeholder="chest" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="bicep" class="form-label">Bicep circumference</label>
+                    <input class="form-input" type="number" name="bicep" id="bicep" placeholder="bicep" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="wrist" class="form-label">Wrist circumference</label>
+                    <input class="form-input" type="number" name="wrist" id="wrist" placeholder="Wrist" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="Back_length" class="form-label">Back length</label>
+                    <input class="form-input" type="number" name="back" id="Back length" placeholder="Back Length" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="stomach" class="form-label">Stomach circumference</label>
+                    <input class="form-input" type="number" name="stomach" id="stomach" placeholder="Stomach Circumference" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="hip" class="form-label">Hip circumference</label>
+                    <input class="form-input" type="number" name="hip" id="hip" placeholder="Hip Circumference" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="thigh" class="form-label">Thigh</label>
+                    <input class="form-input" type="number" name="thigh" id="thigh" placeholder="Thigh" autocomplete="off">
+                </div>
+           
+
+                <div class="form-group">
+                    <div class="cloth-img">
+                        <label for="clothImage" class="form-label">Choose Cloth Image</label>
+                        <input class="form-input" type="file" name="clothImage" id="clothImage" placeholder="Cloth Image" multiple>
+                    </div>
+                </div>
+            </div>
+
+              <div>
+                  <button type="register" name="productBtn" class="btn">Register</button>
+              </div>
+        </form>
+      </div>
+    </section>
+
+    
+    
+
+  <%- include('../partials/footer')%>      
+</body>
+
+</html>

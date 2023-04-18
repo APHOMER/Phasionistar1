@@ -1,0 +1,21 @@
+<nav class="navbar-container">
+        <h1 class="navbar-logo"> 
+          <span class="navbar-text-primary">
+            <a href="/" class="navbar-anchor">Phasioni<span class="navbar-span">Star</span></a>
+          </span>
+        </h1>
+        <ul class="navbar-ul">
+            <li class="navbar-li"><a href="/" class="navbar-anchor">Home</a></li>
+            <% if (!currentUser) {%>
+              <li class="navbar-li"><a href="/register" class="navbar-anchor">Register</a></li>
+              <li class="navbar-li"><a href="/login" class="navbar-anchor">Login</a></li>
+            <% } else {%>
+            <li class="navbar-li"><a href="/clothing" class="navbar-anchor">Add Customer</a></li>
+            <li  class="navbar-li"><a href="/clothings" class="navbar-anchor">Clothes</a></li>
+            <li class="navbar-li"><a href="/logout" class="navbar-anchor">Logout</a></li>
+            <% } %>
+        </ul>
+</nav>
+
+      <%- include('flash')%>
+  
