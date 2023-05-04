@@ -119,6 +119,7 @@ module.exports.deleteCloth = async (req, res) => {
         const { id } = req.params;
         const cloth = await Product.findByIdAndDelete(id);
         console.log(`Hurray ${cloth.ownerName}'s Measurement has been deleted`)
+        req.flash('success', `Hurray ${cloth.ownerName}'s Measurement has been deleted`)
         res.redirect('/clothings');
 
     } catch(error) {
