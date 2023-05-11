@@ -8,16 +8,8 @@ const ImageSchema = new Schema({
 });
 
 
-// <%cloth.clothImages.forEach(image => {%>
-        
-//     <img crossorigin="anonymous" class="show" alt="....." src="<%=image.url%>"></img>
-
-// <%})%>
-
 // ImageSchema.virtual('thumb').get(function() {
 ImageSchema.virtual('thumbnail').get(function() {
-    // return this.url.replace('/upload', '/upload/w_200');
-    // return this.url.replace('/upload', '/upload/w_400');
     this.url.replace('/upload', '/upload/w_200');
 });
 
