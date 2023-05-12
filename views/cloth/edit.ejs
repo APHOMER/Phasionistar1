@@ -110,7 +110,6 @@
 
                 <div class="mb-3">
                     <% cloth.clothImages.forEach(function(img, i) { %>
-                        <!-- <img src="<%=img.thumb %>" class="img-thumbnail" alt=""> -->
                         <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="...">
                         <div class="form-check-inline">
                             <input type="checkbox" id="clothImage-<%=i%>" name="deleteClothImages[]" value="<%=img.filename%>">
