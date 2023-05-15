@@ -2,6 +2,9 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`app: ${app.get('env')}`);
+
 
 const express = require('express');
 const app = express();
@@ -158,7 +161,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session()); // this line must always be under sessin (i.e two lines above
 passport.use(new localStrategy(User.authenticate()));
-
+passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
