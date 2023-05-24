@@ -28,7 +28,6 @@ router.post('/register', async (req, res, next) => {
             req.flash('success', `${user.username} Welcome to Phasionistar`)
             res.redirect('/login');
         })
-        
 
     } catch(error) {
         console.log('Registration failed', error);
