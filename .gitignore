@@ -6,28 +6,6 @@ schemas.js
 
 
 
-
-# mongodb.js
-# PORT=3000
-# MONGODB_URL='mongodb://127.0.0.1:27017/PhasionDB'
-
-# CLOUDINARY_CLOUD_NAME=dfhhjkekb
-# CLOUDINARY_KEY=986687577347183
-# CLOUDINARY_SECRET=HlTJiIl_7Yoi1UiJSgrHKLAPXts
-
-# # JWT_SECRET='thisismysecret'
-# # SENDGRID_API_KEY='.........'
-
-
-
-# # cloudinary.config({ 
-# #   cloud_name: 'dfhhjkekb', 
-# #   api_key: '986687577347183', 
-# #   api_secret: 'HlTJiIl_7Yoi1UiJSgrHKLAPXts' 
-# # });
-
-
-
 # /users/user/desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/user/desktop/coded/PHASIONDB
 # shopapho-data
 
