@@ -2,10 +2,6 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
-console.log(`app: ${app.get('env')}`);
-
-
 const express = require('express');
 const app = express();
 const session = require('express-session');
@@ -13,16 +9,17 @@ const path = require('path');
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const localStrategy = require('passport-local');
+const LocalStrategy = require('passport-local').Strategy;
 const mongoSanitize = require('express-mongo-sanitize');
 const flash = require('connect-flash');
 // const flash = require('express-flash');
 const helmet = require('helmet')
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 3004;
 
+// const mongoConnect = require('./db/mongoose')
 const db = require('./db/mongoose')
 const User = require('./models/user');
-const Product = require('./models/product');
+// const Product = require('./models/product');
 
 // routes
 const userRoutes = require('./router/user');
@@ -41,9 +38,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use(methodOverride('_method')); // for changing post requests.
 app.use(express.static(path.join(__dirname,'public')))
-// app.use(express.static("public"));
 
-// app.use(mongoSanitize())
 app.use(
     mongoSanitize({
       replaceWith: '_',
@@ -51,11 +46,6 @@ app.use(
   );
 
 const dbUrl = process.env.PORT ? process.env.ONLINE_MONGODB_URL : process.env.MONGODB_URL;
-// const dbUrl =  process.env.MONGODB_URL;
-
-// store.on('error', function(e) {
-//     console.log("SESSION STORE ERROR", e)
-// })
 
 
 const sessionConfig = {
@@ -63,36 +53,20 @@ const sessionConfig = {
         mongoUrl: dbUrl,
         touchAfter: 24 * 60 * 60
     }),
-    // store,
-    // name: 'phasionistar',
-    name: process.env.SESSION_NAME, // || 'phasionistar',
-    // secret: 'phasionsecret',
-    secret: process.env.MONGODB_SECRET, // || 'phasionsecret',
+    name: process.env.SESSION_NAME, 
+    secret: process.env.MONGODB_SECRET, 
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    // saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: true,  // after deployment uncomment
+        // secure: true,  // after deployment uncomment
         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
 app.use(session(sessionConfig)); // must always be above "passport.session under"
 app.use(flash());
-// app.use(
-//     helmet.contentSecurityPolicy({
-//         directives: {
-//             "default-src":[ "'self'" ],
-//             "base-uri":[ "'self'" ],
-//             "font-src":[ "'self'", "https:", "data:" ],
-//             "frame-ancestors":[ "'self'" ],
-//             "img-src":[ "'self'", "data:", "http://res.cloudinary.com"], //<--- HERE
-//             "script-src":[ "'self'" ],
-//             "script-src-attr":[ "'none'" ],
-//             "style-src":[ "'self'", "https:", "'unsafe-inline'" ],
-//         }
-//     })
-// );
 
 const scriptSrcUrls = [
     "https://stackpath.bootstrapcdn.com/",
@@ -144,24 +118,10 @@ app.use(
 );
 
 
-
-// app.use(
-//     helmet.contentSecurityPolicy({
-//       useDefaults: true,
-//       directives: {
-//         // "img-src": ["https://mysitename.com", "https://res.cloudinary.com/"],
-//             "img-src":[ "'self'", "data:", "http://res.cloudinary.com"],
-//             "script-src":[ "'self'", "data:", "http://bootstrap.com" ],
-//         upgradeInsecureRequests: [],
-//       },
-//       reportOnly: false,
-//     })
-//   );
-
 app.use(passport.initialize());
 app.use(passport.session()); // this line must always be under sessin (i.e two lines above
-passport.use(new localStrategy(User.authenticate()));
-passport.use(User.createStrategy());
+passport.use(new LocalStrategy(User.authenticate()));
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -180,13 +140,24 @@ app.use(userRoutes);
 
 
 
-
-// /users/USER/Desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/user/desktop/coded/PHASIONDB
-
-
-// APHOMER/Phasionistar
-// git remote add origin https://github.com/APHOMER/Phasion.git
-
 app.listen(port, () => {
     console.log(`PHASIONISTER IS RUNNING ON PORT ${port} RIGHT NOW...`);
 })
+
+
+
+// app.use(
+//     helmet.contentSecurityPolicy({
+//         directives: {
+//             "default-src":[ "'self'" ],
+//             "base-uri":[ "'self'" ],
+//             "font-src":[ "'self'", "https:", "data:" ],
+//             "frame-ancestors":[ "'self'" ],
+//             "img-src":[ "'self'", "data:", "http://res.cloudinary.com"], //<--- HERE
+//             "script-src":[ "'self'" ],
+//             "script-src-attr":[ "'none'" ],
+//             "style-src":[ "'self'", "https:", "'unsafe-inline'" ],
+//         }
+//     })
+// );
+
