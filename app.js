@@ -14,7 +14,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const flash = require('connect-flash');
 // const flash = require('express-flash');
 const helmet = require('helmet')
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 3001;
 
 // const mongoConnect = require('./db/mongoose')
 const db = require('./db/mongoose')
