@@ -1,17 +1,20 @@
 <%- include('partials/head')%>
-
 <title>Home | Phasionistar</title>
-
 </head>
 <body>
   <%- include('partials/nav')%>
-  
   <div class="home-page">
     <div class="home-wrapper">
-      <h1 class="home-heading">{USER} req.user.username WELCOME TO PHASIONISTAR</h1>
+      <% if(currentUser) { %> 
+            <h1 class="home-heading"><%= currentUser.username.toUpperCase() %> WELCOME TO PHASIONISTAR</h1>
+      <% } else { %> 
+          <h1 class="home-heading"> USER WELCOME TO PHASIONISTAR</h1>
+      <% } %>
+
       <ul class="home-ul">
         <div>
-            <li class="home-li">start date: 14-10-2022::::::7:44:PM::::::</li>
+            <!-- <li class="home-li">start date: 14-10-2022::::::7:44:PM::::::</li> -->
+            <li class="home-li">start date: MAY-1ST-2023::::::3:44PM::::::</li>
             
         </div>
       </ul>
@@ -20,23 +23,20 @@
       <a class="measure" href="/howToMeasure"><button>How to take Measurements</button></a>
       <ul class="home-ul">
         <div class="home-image-container">
-            <img src="../img/ankara.jpg" alt="ankara" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690374822/Phasionistar/ankara_ameavi.jpg" alt="ankara" class="home-image">
             <li class="home-list-item">Ankara</li>
-            <img src="../img/senator-styles.webp" alt="Senator" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690374551/Phasionistar/senator_jdsygv.jpg" alt="Senator" class="home-image">
             <li class="home-list-item">Senator</li>
-            <img src="../img/lace.jpg" alt="Lace" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690374551/Phasionistar/lace2_gtlxdz.jpg" alt="Lace" class="home-image">
             <li class="home-list-item">Lace</li>
-            <img src="../img/george.webp" alt="Judge" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690374635/Phasionistar/george_oli7w5.jpg" alt="George" class="home-image"> 
             <li class="home-list-item">George</li>
-            <img src="../img/atiku.jpg" alt="atiku" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690376646/Phasionistar/atiku_ebmm0o.webp" alt="atiku" class="home-image">
             <li class="home-list-item" alt="atiku">Atiku</li>
-            <img src="../img/silk.jpg" alt="silk" class="home-image">
-            <li class="home-list-item">Silk</li>
-            <img src="../img/others.jpg" alt="Others" class="home-image">
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1690377703/Phasionistar/silk_hd9rmp.webp" alt="silk" class="home-image">
+            <li class="home-list-item">Silk</li> 
+            <img src="https://res.cloudinary.com/dfhhjkekb/image/upload/v1689781974/Phasionistar/jgvillwcsuufb4obov2u.jpg" alt="Others" class="home-image">
             <li class="home-list-item">Others</li>
-
-            <!-- <img src="../img/cheers.jpg" alt="ankara" class="home-image">
-            <li class="home-list-item">Ankara</li> -->
         </div>
       </ul>
     </div>
