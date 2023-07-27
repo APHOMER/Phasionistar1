@@ -1,14 +1,4 @@
-node_modules/
 config.env
-schemas.js
-
-
-
-
-
-# /users/user/desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/user/desktop/coded/PHASIONDB
-# shopapho-data
-
-
-
-# /users/USER/Desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/user/desktop/coded/PHASIONDB
+node_modules/
+.env1
+# .envs
