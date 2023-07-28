@@ -141,7 +141,7 @@ app.use(userRoutes);
 
 
 app.listen(port, () => {
-    console.log(`PHASIONISTER IS RUNNING ON PORT ${port} RIGHT NOW...`);
+    console.log(`FIRST PHASIONISTAR IS RUNNING ON PORT ${port} RIGHT NOW...`);
 })
 
 
@@ -161,4 +161,5 @@ app.listen(port, () => {
 //     })
 // );
 
+// /users/USER/Desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/USER/DESKTOP/DATABASES/PHASIONISTAR1DB
 // /users/USER/Desktop/coded/mongodbzip/bin/mongod.exe --dbpath=/users/USER/DESKTOP/DATABASES/PHASIONISTAR1DB
