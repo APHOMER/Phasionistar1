@@ -2,8 +2,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose')
+// const passport = require('passport');
 
-const UserSchema = new Schema({
+const userSchema = new Schema({
     name: {
         type: String,
         trim: true,
@@ -28,21 +29,21 @@ const UserSchema = new Schema({
     //     required: true
     // },
     
-    password: {
-        type: String,
-        required: true,
-        minLength: 7,
-        trim: true,
-    },
+    // password: {
+    //     type: String,
+    //     required: true,
+    //     minLength: 7,
+    //     trim: true,
+    // },
     // date: {
     //     type: Date,
     //     default: Date.now
     // },
     // 
 },
-{ 
-    timestamps: true
-}
+// { 
+//     timestamps: true
+// }
 )
 
 // function validateUser(user) {
@@ -55,7 +56,9 @@ const UserSchema = new Schema({
 // }
 
 
-UserSchema.plugin(passportLocalMongoose)
+userSchema.plugin(passportLocalMongoose)
 
 // exports.validate = validateUser;
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;
