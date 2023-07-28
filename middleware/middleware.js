@@ -1,4 +1,5 @@
 const Product = require('../models/product');
+const User = require('../models/user');
 
 // module.exports.isLoggedIn = (req, res, next) => {
 //     if(!req.isAuthenticated()) {
@@ -10,45 +11,33 @@ const Product = require('../models/product');
 //     next();
 // }
 
-module.exports.isLoggedIn = (req, res, next) => {
 
-    try {
-        if(!req.isAuthenticated()) {
-            req.session.returnTo = req.originalUrl;
-            req.flash('error', 'you must be signed in');
-            console.log(`You must be signed in`);
-            return res.redirect('/login');
-        } 
-        
-    } catch (error) {
-        console.log(error);
+
+module.exports.isLoggedIn = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        req.session.returnTo = req.originalUrl
+        req.flash('error', 'You must be signed in first!');
+        console.log('You must be signed in first!')
+        return res.redirect('/login');
     }
     next();
-    
 }
 
-
-// module.exports.validateCloth = (req, res, next) = {
-//     const { error } = productSchema.validate(req.body);
-//     if(error) {
-//         const msg = error.details.map(el => el.message).join(',');
-//         throw new MongoExpiredSessionError(msg, 400); 
-//     } else {
-//         next();
-//     }
-// }
 
 module.exports.isAuthorize = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const cloth = Product.findById(id);
+        const cloth = await Product.findById(id);
+        // const cloth = await Product.findById(req.user._id);
+        // const cloth = await Product.find({ id : req.user._id }).populate('owner');
         // if(!cloth.owner.equals(req.user._id)) {
         if(!cloth.owner == req.user._id) {
             req.flash('error', 'you are not permitted to do this')
             return res.redirect(`/clothing/${id}`);
-        } else {
-            next();
+
+            
         }
+        next();
     } catch (error) {
         console.log(`error due to ${error}`)
         res.send(error);
