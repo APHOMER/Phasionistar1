@@ -2,8 +2,6 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-console.log(process.env.MONGODB_SECRET)
-
 const express = require('express');
 const app = express();
 const session = require('express-session');
@@ -18,7 +16,6 @@ const flash = require('connect-flash');
 const helmet = require('helmet')
 const port = process.env.PORT || 3001;
 
-// const mongoConnect = require('./db/mongoose')
 const db = require('./db/mongoose')
 const User = require('./models/user');
 // const Product = require('./models/product');
