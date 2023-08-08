@@ -23,7 +23,6 @@ const User = require('./models/user');
 // routes
 const userRoutes = require('./router/user');
 const productRoutes = require('./router/product');
-// const mongoose = require('mongoose');
 
 const MongoStore = require('connect-mongo')
 
