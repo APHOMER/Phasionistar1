@@ -26,7 +26,6 @@ const productRoutes = require('./router/product');
 // const mongoose = require('mongoose');
 
 const MongoStore = require('connect-mongo')
-// const MongoStore = require('connect-mongo')(session);
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
