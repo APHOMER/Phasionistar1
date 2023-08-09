@@ -20,7 +20,7 @@ router.post('/register', async (req, res, next) => {
         const { name, email, username, password, } = req.body;
         const user = new User({ name, username, password, email });
         const registeredUser = await User.register(user, password);
-        // console.log(registeredUser);
+        
         req.login(registeredUser, err => {
             if(err) return next(err);
             req.flash('success', `${user.username} Welcome to Phasionistar`)
@@ -57,13 +57,11 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
 
 
 
-    router.get('/logout', (req, res) => {
-        req.logout();
-        req.flash('success', 'Goodbye');
-        res.redirect('/');
-    })
-
-
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success', 'Goodbye');
+    res.redirect('/');
+})
 
 
 
