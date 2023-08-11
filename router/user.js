@@ -63,8 +63,6 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 })
 
-
-
 router.all('*', (req, res) => {
     res.send('<h1> Error Page </h1>')
     // res.render('home');
